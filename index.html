@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Game Nih ^_^</title>
+        <script src="assets/js/angular.min.js"></script>
+        <script src="assets/js/angular-route.js"></script>
+        <script src="app/App.js"></script>
+    </head>
+    <body ng-app="Game" ng-controller="GameController">
+        <div>
+            Kesempatan kamu : {{guesses}}
+        </div>
+        <div class="incorrectGuesses">
+            Kesalahan kamu itu :
+            <span ng-repeat="letter in incorrectLettersChosen">
+                {{letter}}
+            </span>
+        </div>
+        <div>
+            Tepat sekali :
+            <span ng-repeat="letter in correctLettersChosen">
+                {{letter}}
+            </span>
+        </div>
+        <div>Kata yang harus kamu jawab: {{displayWord}}</div>
+        <div>
+            <div>
+                <input type="text" name="guess" ng-model="input.letter">
+                <button ng-click="letterChosen()">Submit</button>
+            </div>
+        </div>
+    </body>
+</html>
